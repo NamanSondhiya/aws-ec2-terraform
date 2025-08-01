@@ -1,0 +1,47 @@
+variable "num" {
+  description = "Custom number tag for the instance"
+  type        = number
+  default     = 300
+}
+
+variable "access_key" {
+  description = "AWS Access Key ID"
+  type        = string
+  default     = ""
+}
+
+variable "secret_key" {
+  description = "AWS Secret Access Key"
+  type        = string
+  default     = ""
+}
+
+variable "region" {
+  description = "AWS region"
+  type        = string
+  default     = "ap-south-1"
+}
+
+variable "ami" {
+  description = "AMI ID for EC2 instance"
+  type        = string
+  default     = "ami-0f918f7e67a3323f0"
+}
+
+variable "subnet_id" {
+  description = "Subnet ID where EC2 instance will be created"
+  type        = string
+  default     = "subnet-xxxxxxxxx"
+}
+
+variable "instance_name" {
+  description = "Name tag for the EC2 instance"
+  type        = string
+  default     = "MyEC2Instance"
+}
+
+variable "vpc_id" {
+  description = "VPC ID where security group will be created"
+  type        = string
+  default     = "vpc-xxxxxxxxx"
+}
