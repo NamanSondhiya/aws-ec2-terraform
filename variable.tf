@@ -1,31 +1,13 @@
-variable "num" {
-  description = "Custom number tag for the instance"
-  type        = number
-  default     = 300
-}
-
-variable "access_key" {
-  description = "AWS Access Key ID"
+variable "env" {
+  description = "Define one of the multi-env here dev, stg, prod"
   type        = string
-  default     = ""
-}
-
-variable "secret_key" {
-  description = "AWS Secret Access Key"
-  type        = string
-  default     = ""
-}
-
-variable "region" {
-  description = "AWS region"
-  type        = string
-  default     = "ap-south-1"
+  default     = "prod"
 }
 
 variable "ami" {
   description = "AMI ID for EC2 instance"
   type        = string
-  default     = "ami-0f918f7e67a3323f0"
+  default     = "ami-02b8269d5e85954ef"
 }
 
 variable "subnet_id" {
