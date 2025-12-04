@@ -1,12 +1,18 @@
 resource "aws_instance" "Giovani" {
-    ami = var.ami
-    instance_type = "t2.micro"
-    subnet_id = var.subnet_id
+    ami                         = var.ami
+    instance_type               = var.instance_type
+    subnet_id                   = var.subnet_id
+    key_name                    = "ubut"
     associate_public_ip_address = true
-    vpc_security_group_ids = [aws_security_group.cloudforma-sgt.id]
+    vpc_security_group_ids      = [aws_security_group.cloudforma-sgt.id]
+
+    root_block_device {
+      volume_size = var.root_volume_size
+      volume_type = "gp3"
+    }
     
     tags = {
-        Name = var.instance_name
+        Name        = var.instance_name
         Environment = var.env
     }
 }
